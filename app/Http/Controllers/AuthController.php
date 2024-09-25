@@ -26,7 +26,7 @@ class AuthController extends Controller
             $response = Http::withHeaders([
                 'mdi-clientid' => $clientId,
                 'mdi-secretkey' => $secretKey
-            ])->post($apiUrl);
+            ])->post(url: $apiUrl);
 
             $data = $response->json();
 
