@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\SemakNoInsolvensiController;
+// use App\Http\Controllers\SemakNoInsolvensiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +15,13 @@ use App\Http\Controllers\SemakNoInsolvensiController;
 |
 */
 
+Route::get('/', function () {
+    return view('frontpage');
+});
+
 Route::get('/php-session', [AuthController::class, 'showSession']);
 
-// Route::get('/semakan', function () {
-//     return view('semakan');
-// });
-
-
 Route::middleware('generate.tokens')->group(function () {
-    Route::get('/semak-insolvensi', [SemakNoInsolvensiController::class, 'showSemakInsolvensi']);
-    Route::post('/semak-insolvensi', [SemakNoInsolvensiController::class, 'semakInsolvensi']);
-    Route::get('/', function () {
-        return "Welcome";
-    });
+    // Route::get('/semak-insolvensi', [SemakNoInsolvensiController::class, 'showSemakInsolvensi']);
+    // Route::post('/semak-insolvensi', [SemakNoInsolvensiController::class, 'semakInsolvensi']);
 });
